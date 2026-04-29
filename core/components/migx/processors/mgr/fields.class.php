@@ -66,6 +66,9 @@ class migxFormProcessor extends modProcessor {
         $fieldid = 0;
         /*actual record */
         $record = $this->modx->fromJSON($scriptProperties['record_json']);
+        if (!is_array($record)) {
+            $record = [];
+        }
 
         $allfields = array();
         $formnames = array();
